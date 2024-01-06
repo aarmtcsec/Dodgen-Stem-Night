@@ -244,6 +244,7 @@ def ironman_draw():
   ankur3Goto = (0, -220)
   turtle.speed(2)
 
+
   def logo(a, b):
     turtle.penup()
     turtle.goto(b)
@@ -264,7 +265,7 @@ def ironman_draw():
   logo(ankur2, ankur2Goto)
   logo(ankur3, ankur3Goto)
   turtle.hideturtle()
-  turtle.done()
+
 def batman_draw():
   kalam = turtle.Turtle()
   kalam.speed(500)
@@ -353,7 +354,8 @@ def batman_draw():
 
   kalam.penup()
   kalam.goto(300, 300)
-  turtle.don
+  kalam.hideturtle()
+
 def thor_draw():
   import sys
   import math
@@ -544,11 +546,10 @@ def superman_draw():
   curve(40)
   t.forward(20)
   t.end_fill()
+  turtle.hideturtle()
+  #use this command to hide the turtle so it is not visible in the final image
 
-  t.hideturtle(
-  )  #use this command to hide the turtle so it is not visible in the final image
-  turtle.exitonclick(
-  )  #this command will leave the window open until it is clicked
+ # t.exitonclick()  #this command will leave the window open until it is clicked
 while True:
   def get_user_name():
     name = input('What is your name?\n')
@@ -557,9 +558,9 @@ while True:
   def select_hero(name):
     vowels = ['A', 'E', 'I', 'O', 'U']
     if name[0].upper() in vowels:
-      superheroes = [ "Batman", "Iron Man", "Captain America", "Thor", "Hulk","Aquaman","Black Panter","Dr.Strange","Captain America","Wolverine","Thor","Hulk","Captain Marvel"]
+      superheroes = [ "Batman", "Iron Man", "Superman"]
     else:
-      superheroes = ["Batman", "Iron Man", "Captain America", "Thor", "Hulk","Aquaman","Black Panter","Superman""Dr.Strange","Captain America","Wolverine","Iron Man","Thor","Hulk","Captain Marvel"  ]
+      superheroes = ["Superman", "Iron Man", "Batman"]
     return random.choice(superheroes)
   def main():
     name = get_user_name()
@@ -567,16 +568,12 @@ while True:
     print("You have to design " + random_hero)
     if random_hero == "Superman":
       superman_draw()
+      turtle.reset()
     if random_hero == "Batman":
       batman_draw()
+      turtle.reset()
     if random_hero == "Iron Man":
       ironman_draw()
-    if random_hero == "Captian America":
-      captian_draw()  
-    if random_hero == "Thor":
-      thor_draw()
-  
-  
-  main()
+      turtle.reset()
   if __name__ == "__main__":
     main()
