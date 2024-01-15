@@ -1,5 +1,6 @@
 import random
-from superheros import batman, ironman, superman, captain, thor
+from superheros import batman, ironman, superman, captain, thor, spidey
+
 
 
 while True:
@@ -10,14 +11,16 @@ while True:
   def select_hero(name):
     vowels = ['A', 'E', 'I', 'O', 'U']
     if name[0].upper() in vowels:
-      superheroes = [ "Thor","Batman", "Iron Man", "Superman", "Captain America"]
+      superheroes = [ "Thor","Batman", "Iron Man", "Superman", "Captain America", "Spiderman"]
     else:
-      superheroes = ["Superman", "Iron Man", "Captain America", "Batman", "Thor"]
+      superheroes = [ "Spiderman", "Superman", "Iron Man", "Captain America", "Batman", "Thor"]
     return random.choice(superheroes)
   def main():
     name = get_user_name()
     random_hero = select_hero(name)
     print("You have to design " + random_hero)
+    if random_hero == "Spiderman":
+      spidey.draw()
     if random_hero == "Captain America":
       captain.draw()
     if random_hero == "Batman":
