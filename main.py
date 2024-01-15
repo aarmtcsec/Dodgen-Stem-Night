@@ -18,7 +18,9 @@ while True:
   def main():
     name = get_user_name()
     random_hero = select_hero(name)
-    print("You have to design " + random_hero)
+    num = random.randint(1,17)
+    print("You have to design somthing to help " + random_hero + " solve real world problem number")
+    print(num)
     if random_hero == "Spiderman":
       spidey.draw()
     if random_hero == "Captain America":
